@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../date_picker_theme.dart';
 import '../date_picker_constants.dart';
+import '../date_picker_theme.dart';
 import '../i18n/date_picker_i18n.dart';
 
 /// DatePicker's title widget.
@@ -9,7 +8,7 @@ import '../i18n/date_picker_i18n.dart';
 /// @author dylan wu
 /// @since 2019-05-16
 class DatePickerTitleWidget extends StatelessWidget {
-  DatePickerTitleWidget({
+  const DatePickerTitleWidget({
     Key key,
     this.pickerTheme,
     this.locale,
@@ -36,13 +35,13 @@ class DatePickerTitleWidget extends StatelessWidget {
             height: pickerTheme.titleHeight,
             child: FlatButton(
                 child: _renderCancelWidget(context),
-                onPressed: () => this.onCancel()),
+                onPressed: () => onCancel()),
           ),
           Container(
             height: pickerTheme.titleHeight,
             child: FlatButton(
                 child: _renderConfirmWidget(context),
-                onPressed: () => this.onConfirm()),
+                onPressed: () => onConfirm()),
           ),
         ],
       ),
@@ -53,7 +52,7 @@ class DatePickerTitleWidget extends StatelessWidget {
   Widget _renderCancelWidget(BuildContext context) {
     Widget cancelWidget = pickerTheme.cancel;
     if (cancelWidget == null) {
-      TextStyle textStyle = pickerTheme.cancelTextStyle ??
+      final TextStyle textStyle = pickerTheme.cancelTextStyle ??
           TextStyle(
               color: Theme.of(context).unselectedWidgetColor, fontSize: 16.0);
       cancelWidget =
@@ -66,7 +65,7 @@ class DatePickerTitleWidget extends StatelessWidget {
   Widget _renderConfirmWidget(BuildContext context) {
     Widget confirmWidget = pickerTheme.confirm;
     if (confirmWidget == null) {
-      TextStyle textStyle = pickerTheme.confirmTextStyle ??
+      final TextStyle textStyle = pickerTheme.confirmTextStyle ??
           TextStyle(color: Theme.of(context).primaryColor, fontSize: 16.0);
       confirmWidget =
           Text(DatePickerI18n.getLocaleDone(locale), style: textStyle);

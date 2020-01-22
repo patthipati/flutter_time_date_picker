@@ -10,7 +10,7 @@ class DateTimeFormatter {
   /// Get default value of date format.
   static String generateDateFormat(
       String dateFormat, DateTimePickerMode pickerMode) {
-    if (dateFormat != null && dateFormat.length > 0) {
+    if (dateFormat != null && dateFormat.isNotEmpty) {
       return dateFormat;
     }
     switch (pickerMode) {
@@ -37,19 +37,19 @@ class DateTimeFormatter {
   /// Split date format to array.
   static List<String> splitDateFormat(String dateFormat,
       {DateTimePickerMode mode}) {
-    if (dateFormat == null || dateFormat.length == 0) {
+    if (dateFormat == null || dateFormat.isEmpty) {
       return [];
     }
     List<String> result = dateFormat.split(RegExp(DATE_FORMAT_SEPARATOR));
     if (mode == DateTimePickerMode.datetime) {
       // datetime mode need join day format
-      List<String> temp = List<String>();
-      StringBuffer dayFormat = StringBuffer();
+      final List<String> temp = <String>[];
+      final StringBuffer dayFormat = StringBuffer();
       for (int i = 0; i < result.length; i++) {
-        String format = result[i];
+        final String format = result[i];
         if (isDayFormat(format)) {
           // find format pre-separator
-          int end = dateFormat.indexOf(format);
+          final int end = dateFormat.indexOf(format);
           if (end > 0) {
             int start = 0;
             if (i > 0) {
@@ -76,7 +76,7 @@ class DateTimeFormatter {
   /// Format datetime string
   static String formatDateTime(
       int value, String format, DateTimePickerLocale locale) {
-    if (format == null || format.length == 0) {
+    if (format == null || format.isEmpty) {
       return value.toString();
     }
 
@@ -117,7 +117,7 @@ class DateTimeFormatter {
   /// Format day display
   static String formatDate(
       DateTime dateTime, String format, DateTimePickerLocale locale) {
-    if (format == null || format.length == 0) {
+    if (format == null || format.isEmpty) {
       return dateTime.toString();
     }
 
@@ -160,13 +160,13 @@ class DateTimeFormatter {
   /// format month text
   static String _formatMonth(
       int value, String format, DateTimePickerLocale locale) {
-    List<String> months = DatePickerI18n.getLocaleMonths(locale);
+    final List<String> months = DatePickerI18n.getLocaleMonths(locale);
     if (format.contains('MMMM')) {
       // MMMM: the full name of month, e.g. January
       return format.replaceAll('MMMM', months[value - 1]);
     } else if (format.contains('MMM')) {
       // MMM: the short name of month, e.g. Jan
-      String month = months[value - 1];
+      final String month = months[value - 1];
       return format.replaceAll('MMM', month.substring(0, min(3, month.length)));
     }
     return _formatNumber(value, format, 'M');
@@ -183,11 +183,11 @@ class DateTimeFormatter {
       int value, String format, DateTimePickerLocale locale) {
     if (format.contains('EEEE')) {
       // EEEE: the full name of week, e.g. Monday
-      List<String> weeks = DatePickerI18n.getLocaleWeeks(locale);
+      final List<String> weeks = DatePickerI18n.getLocaleWeeks(locale);
       return format.replaceAll('EEEE', weeks[value - 1]);
     }
     // EEE: the short name of week, e.g. Mon
-    List<String> weeks = DatePickerI18n.getLocaleWeeks(locale, false);
+    final List<String> weeks = DatePickerI18n.getLocaleWeeks(locale, false);
     return format.replaceAll(RegExp(r'E+'), weeks[value - 1]);
   }
 

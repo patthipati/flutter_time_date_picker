@@ -6,42 +6,42 @@ class _StringsEs extends _StringsI18n {
 
   @override
   String getCancelText() {
-    return "Cancelar";
+    return 'Cancelar';
   }
 
   @override
   String getDoneText() {
-    return "Aceptar";
+    return 'Aceptar';
   }
 
   @override
   List<String> getMonths() {
     return [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre"
+      'Enero',
+      'Febrero',
+      'Marzo',
+      'Abril',
+      'Mayo',
+      'Junio',
+      'Julio',
+      'Agosto',
+      'Septiembre',
+      'Octubre',
+      'Noviembre',
+      'Diciembre'
     ];
   }
 
   @override
   List<String> getWeeksFull() {
     return [
-      "Lunes",
-      "Martes",
-      "Miercoles",
-      "Jueves",
-      "Viernes",
-      "Sabado",
-      "Domingo",
+      'Lunes',
+      'Martes',
+      'Miercoles',
+      'Jueves',
+      'Viernes',
+      'Sabado',
+      'Domingo',
     ];
   }
 

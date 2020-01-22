@@ -6,7 +6,7 @@ import 'package:flutter_time_date_picker/flutter_time_date_picker.dart';
 /// @author dylan wu
 /// @since 2019-05-10
 class DateTimePickerInPage extends StatefulWidget {
-  DateTimePickerInPage({Key key}) : super(key: key);
+  const DateTimePickerInPage({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _DateTimePickerInPageState();
@@ -28,18 +28,18 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+    final TextStyle hintTextStyle =
+        Theme.of(context).textTheme.subhead.apply(color: const Color(0xFF999999));
     return Scaffold(
-      appBar: AppBar(title: Text("DateTimePicker In Page")),
+      appBar: AppBar(title: const Text('DateTimePicker In Page')),
       body: Container(
         decoration: BoxDecoration(color: Colors.white),
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
             // min datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -54,7 +54,7 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
 
             // max datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -69,7 +69,7 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
 
             // init datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -84,7 +84,7 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
 
             // date format
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const  EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -106,11 +106,11 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
 
             // custom title height
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                    margin: const EdgeInsets.only(right: 8.0),
                     child: Text('custom title height:', style: hintTextStyle),
                   ),
                   Text('40.0', style: Theme.of(context).textTheme.subhead),
@@ -120,7 +120,7 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
 
             // date time picker widget
             Container(
-              margin: EdgeInsets.only(top: 8.0, bottom: 40.0),
+              margin: const EdgeInsets.only(top: 8.0, bottom: 40.0),
               child: DateTimePickerWidget(
                 minDateTime: DateTime.parse(MIN_DATETIME),
                 maxDateTime: DateTime.parse(MAX_DATETIME),
@@ -132,10 +132,10 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
                     width: double.infinity,
                     height: 40.0,
                     alignment: Alignment.center,
-                    child: Text('Date Time Picker Title'),
-                    decoration: BoxDecoration(color: Color(0xFFc0ca33)),
+                    child: const Text('Date Time Picker Title'),
+                    decoration: const BoxDecoration(color: Color(0xFFc0ca33)),
                   ),
-                  backgroundColor: Color(0xFFf0f4c3),
+                  backgroundColor: const Color(0xFFf0f4c3),
                 ),
                 onChange: (dateTime, selectedIndex) {
                   setState(() {
@@ -153,7 +153,7 @@ class _DateTimePickerInPageState extends State<DateTimePickerInPage> {
                     style: Theme.of(context).textTheme.subhead),
                 Container(
                   width: double.infinity,
-                  padding: EdgeInsets.only(top: 4.0),
+                  padding: const EdgeInsets.only(top: 4.0),
                   child: Text(
                     _dateTime != null
                         ? '${_dateTime.year}-${_dateTime.month.toString().padLeft(2, '0')}-${_dateTime.day.toString().padLeft(2, '0')} ${_dateTime.hour.toString().padLeft(2, '0')}:${_dateTime.minute.toString().padLeft(2, '0')}:${_dateTime.second.toString().padLeft(2, '0')}'

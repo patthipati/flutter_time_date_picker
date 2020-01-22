@@ -79,25 +79,25 @@ const DateTimePickerLocale DATETIME_PICKER_LOCALE_DEFAULT =
     DateTimePickerLocale.en_us;
 
 const Map<DateTimePickerLocale, _StringsI18n> datePickerI18n = {
-  DateTimePickerLocale.en_us: const _StringsEnUs(),
-  DateTimePickerLocale.zh_cn: const _StringsZhCn(),
-  DateTimePickerLocale.pt_br: const _StringsPtBr(),
-  DateTimePickerLocale.es: const _StringsEs(),
-  DateTimePickerLocale.ro: const _StringsRo(),
-  DateTimePickerLocale.bn: const _StringsBn(),
-  DateTimePickerLocale.ar: const _StringsAr(),
-  DateTimePickerLocale.jp: const _StringsJp(),
-  DateTimePickerLocale.ru: const _StringsRu(),
-  DateTimePickerLocale.de: const _StringsDe(),
-  DateTimePickerLocale.ko: const _StringsKo(),
-  DateTimePickerLocale.it: const _StringsIt(),
-  DateTimePickerLocale.hu: const _StringsHu(),
+  DateTimePickerLocale.en_us:  _StringsEnUs(),
+  DateTimePickerLocale.zh_cn:  _StringsZhCn(),
+  DateTimePickerLocale.pt_br:  _StringsPtBr(),
+  DateTimePickerLocale.es:  _StringsEs(),
+  DateTimePickerLocale.ro:  _StringsRo(),
+  DateTimePickerLocale.bn:  _StringsBn(),
+  DateTimePickerLocale.ar:  _StringsAr(),
+  DateTimePickerLocale.jp:  _StringsJp(),
+  DateTimePickerLocale.ru:  _StringsRu(),
+  DateTimePickerLocale.de:  _StringsDe(),
+  DateTimePickerLocale.ko:  _StringsKo(),
+  DateTimePickerLocale.it:  _StringsIt(),
+  DateTimePickerLocale.hu:  _StringsHu(),
 };
 
 class DatePickerI18n {
   /// Get done button text
   static String getLocaleDone(DateTimePickerLocale locale) {
-    _StringsI18n i18n = datePickerI18n[locale] ??
+    final _StringsI18n i18n = datePickerI18n[locale] ??
         datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT];
     return i18n.getDoneText() ??
         datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT].getDoneText();
@@ -105,7 +105,7 @@ class DatePickerI18n {
 
   /// Get cancel button text
   static String getLocaleCancel(DateTimePickerLocale locale) {
-    _StringsI18n i18n = datePickerI18n[locale] ??
+    final _StringsI18n i18n = datePickerI18n[locale] ??
         datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT];
     return i18n.getCancelText() ??
         datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT].getCancelText();
@@ -113,9 +113,9 @@ class DatePickerI18n {
 
   /// Get locale month array
   static List<String> getLocaleMonths(DateTimePickerLocale locale) {
-    _StringsI18n i18n = datePickerI18n[locale] ??
+    final _StringsI18n i18n = datePickerI18n[locale] ??
         datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT];
-    List<String> months = i18n.getMonths();
+    final List<String> months = i18n.getMonths();
     if (months != null && months.isNotEmpty) {
       return months;
     }
@@ -125,22 +125,22 @@ class DatePickerI18n {
   /// Get locale week array
   static List<String> getLocaleWeeks(DateTimePickerLocale locale,
       [bool isFull = true]) {
-    _StringsI18n i18n = datePickerI18n[locale] ??
+    final _StringsI18n i18n = datePickerI18n[locale] ??
         datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT];
     if (isFull) {
-      List<String> weeks = i18n.getWeeksFull();
+     final List<String> weeks = i18n.getWeeksFull();
       if (weeks != null && weeks.isNotEmpty) {
         return weeks;
       }
       return datePickerI18n[DATETIME_PICKER_LOCALE_DEFAULT].getWeeksFull();
     }
 
-    List<String> weeks = i18n.getWeeksShort();
+    final List<String> weeks = i18n.getWeeksShort();
     if (weeks != null && weeks.isNotEmpty) {
       return weeks;
     }
 
-    List<String> fullWeeks = i18n.getWeeksFull();
+    final List<String> fullWeeks = i18n.getWeeksFull();
     if (fullWeeks != null && fullWeeks.isNotEmpty) {
       return fullWeeks
           .map((item) => item.substring(0, min(3, item.length)))

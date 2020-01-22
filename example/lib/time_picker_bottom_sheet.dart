@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_time_date_picker/flutter_time_date_picker.dart';
 
 class TimePickerBottomSheet extends StatefulWidget {
-  TimePickerBottomSheet({Key key}) : super(key: key);
+  const TimePickerBottomSheet({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TimePickerBottomSheetState();
@@ -15,7 +15,7 @@ const String INIT_DATETIME = '2019-05-17 18:13:15';
 
 class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
   String _format = 'H时:mm分';
-  TextEditingController _formatCtrl = TextEditingController();
+  final TextEditingController _formatCtrl = TextEditingController();
 
   DateTime _dateTime;
 
@@ -28,17 +28,17 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+    final TextStyle hintTextStyle =
+        Theme.of(context).textTheme.subhead.apply(color: const Color(0xFF999999));
     return Scaffold(
-      appBar: AppBar(title: Text('TimePicker Bottom Sheet')),
+      appBar: AppBar(title: const Text('TimePicker Bottom Sheet')),
       body: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
             // min datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -53,7 +53,7 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
 
             // max datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -68,7 +68,7 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
 
             // init datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -91,11 +91,11 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
 
             // custom title height
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                    margin: const EdgeInsets.only(right: 8.0),
                     child: Text('custom title height:', style: hintTextStyle),
                   ),
                   Text('56.0', style: Theme.of(context).textTheme.subhead),
@@ -117,14 +117,14 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
 
             // selected time
             Container(
-              margin: EdgeInsets.only(top: 40.0),
+              margin: const EdgeInsets.only(top: 40.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text('Selected Time:',
                       style: Theme.of(context).textTheme.subhead),
                   Container(
-                    padding: EdgeInsets.only(left: 12.0),
+                    padding: const EdgeInsets.only(left: 12.0),
                     child: Text(
                         '${_dateTime.hour.toString().padLeft(2, '0')}:${_dateTime.minute.toString().padLeft(2, '0')}:${_dateTime.second.toString().padLeft(2, '0')}',
                         style: Theme.of(context).textTheme.title),
@@ -154,7 +154,7 @@ class _TimePickerBottomSheetState extends State<TimePickerBottomSheet> {
       pickerMode: DateTimePickerMode.time, // show TimePicker
       pickerTheme: DateTimePickerTheme(
         title: Container(
-          decoration: BoxDecoration(color: Color(0xFFEFEFEF)),
+          decoration: const BoxDecoration(color: Color(0xFFEFEFEF)),
           width: double.infinity,
           height: 56.0,
           alignment: Alignment.center,
