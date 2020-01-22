@@ -1,14 +1,14 @@
 /// Selected value of DatePicker.
-typedef DateValueCallback(DateTime dateTime, List<int> selectedIndex);
+typedef DateValueCallback = Function(DateTime dateTime, List<int> selectedIndex);
 
 /// Pressed cancel callback.
-typedef DateVoidCallback();
+typedef DateVoidCallback = Function();
 
 /// Default value of minimum datetime.
-const String DATE_PICKER_MIN_DATETIME = "1900-01-01 00:00:00";
+const String DATE_PICKER_MIN_DATETIME = '1900-01-01 00:00:00';
 
 /// Default value of maximum datetime.
-const String DATE_PICKER_MAX_DATETIME = "2100-12-31 23:59:59";
+const String DATE_PICKER_MAX_DATETIME = '2100-12-31 23:59:59';
 
 /// Default value of date format
 const String DATETIME_PICKER_DATE_FORMAT = 'yyyy-MM-dd';

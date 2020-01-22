@@ -1,14 +1,11 @@
 name: flutter_time_date_picker
 description: Flutter cupertino date picker. Display DatePicker in iOS style. Support both Android and iOS platform. This Plugin is enhancement https://github.com/wuzhendev/flutter-cupertino-date-picker .
-version: 0.0.1
-authors:
-  - Prudhvi <patthipati@gmail.com>
-  - Vaishali <telang.vaishali4@gmail.com>
-  - Dylan Wu <dylanwuzh@gmail.com>
+version: 0.0.2
+
 homepage: https://github.com/patthipati/flutter_time_date_picker
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:

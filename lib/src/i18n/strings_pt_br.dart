@@ -17,31 +17,31 @@ class _StringsPtBr extends _StringsI18n {
   @override
   List<String> getMonths() {
     return [
-      "Janeiro",
-      "Fevereiro",
-      "Março",
-      "Abril",
-      "Maio",
-      "Junho",
-      "Julho",
-      "Agosto",
-      "Setembro",
-      "Outubro",
-      "Novembro",
-      "Dezembro"
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro'
     ];
   }
 
   @override
   List<String> getWeeksFull() {
     return [
-      "Segunda",
-      "Terca",
-      "Quarta",
-      "Quinta",
-      "Sexta",
-      "Sabado",
-      "Domingo",
+      'Segunda',
+      'Terca',
+      'Quarta',
+      'Quinta',
+      'Sexta',
+      'Sabado',
+      'Domingo',
     ];
   }
 

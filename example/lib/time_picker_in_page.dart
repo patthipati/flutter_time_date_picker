@@ -6,7 +6,7 @@ import 'package:flutter_time_date_picker/flutter_time_date_picker.dart';
 /// @author dylan wu
 /// @since 2019-05-10
 class TimePickerInPage extends StatefulWidget {
-  TimePickerInPage({Key key}) : super(key: key);
+  const TimePickerInPage({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TimePickerInPageState();
@@ -28,18 +28,18 @@ class _TimePickerInPageState extends State<TimePickerInPage> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+    final TextStyle hintTextStyle =
+        Theme.of(context).textTheme.subhead.apply(color: const Color(0xFF999999));
     return Scaffold(
-      appBar: AppBar(title: Text("TimePicker In Page")),
+      appBar: AppBar(title: const Text('TimePicker In Page')),
       body: Container(
-        decoration: BoxDecoration(color: Colors.white),
-        padding: EdgeInsets.all(16.0),
+        decoration: const BoxDecoration(color: Colors.white),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
             // min datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -54,7 +54,7 @@ class _TimePickerInPageState extends State<TimePickerInPage> {
 
             // max datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -69,7 +69,7 @@ class _TimePickerInPageState extends State<TimePickerInPage> {
 
             // init datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -84,7 +84,7 @@ class _TimePickerInPageState extends State<TimePickerInPage> {
 
             // date format
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -98,14 +98,14 @@ class _TimePickerInPageState extends State<TimePickerInPage> {
 
             // date format input field
             Container(
-              margin: EdgeInsets.only(top: 8.0, bottom: 40.0),
+              margin: const EdgeInsets.only(top: 8.0, bottom: 40.0),
               child: TimePickerWidget(
                 minDateTime: DateTime.parse(MIN_DATETIME),
                 maxDateTime: DateTime.parse(MAX_DATETIME),
                 initDateTime: DateTime.parse(INIT_DATETIME),
                 dateFormat: DATE_FORMAT,
                 minuteDivider: 15,
-                pickerTheme: DateTimePickerTheme(
+                pickerTheme: const DateTimePickerTheme(
                     showTitle: false, backgroundColor: Color(0xFFe1bee7)),
                 onChange: (dateTime, selectedIndex) {
                   setState(() {
@@ -122,7 +122,7 @@ class _TimePickerInPageState extends State<TimePickerInPage> {
                 Text('Selected Time:',
                     style: Theme.of(context).textTheme.subhead),
                 Container(
-                  padding: EdgeInsets.only(left: 12.0),
+                  padding: const EdgeInsets.only(left: 12.0),
                   child: Text(
                     _dateTime != null
                         ? '${_dateTime.hour.toString().padLeft(2, '0')}:${_dateTime.minute.toString().padLeft(2, '0')}:${_dateTime.second.toString().padLeft(2, '0')}'

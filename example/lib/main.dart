@@ -15,82 +15,82 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Date Picker Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key}) : super(key: key);
+  const MyHomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = TextStyle(color: Colors.white, fontSize: 16.0);
+    final TextStyle textStyle = TextStyle(color: Colors.white, fontSize: 16.0);
     return Scaffold(
-      appBar: AppBar(title: Text('Date Picker Demo')),
+      appBar: AppBar(title: const Text('Date Picker Demo')),
       body: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             RaisedButton(
               color: Colors.blue,
-              child: Text("DatePicker Bottom Sheet", style: textStyle),
+              child: Text('DatePicker Bottom Sheet', style: textStyle),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return DatePickerBottomSheet();
+                    .push<dynamic>(MaterialPageRoute<dynamic>(builder: (context) {
+                  return const DatePickerBottomSheet();
                 }));
               },
             ),
             RaisedButton(
               color: Colors.blue,
-              child: Text("DatePicker In Page", style: textStyle),
+              child: Text('DatePicker In Page', style: textStyle),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return DatePickerInPage();
+                    .push<dynamic>(MaterialPageRoute<dynamic>(builder: (context) {
+                  return const DatePickerInPage();
                 }));
               },
             ),
             RaisedButton(
               color: Colors.blue,
-              child: Text("TimePicker Bottom Sheet", style: textStyle),
+              child: Text('TimePicker Bottom Sheet', style: textStyle),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return TimePickerBottomSheet();
+                    .push<dynamic>(MaterialPageRoute<dynamic>(builder: (context) {
+                  return const TimePickerBottomSheet();
                 }));
               },
             ),
             RaisedButton(
               color: Colors.blue,
-              child: Text("TimePicker In Page", style: textStyle),
+              child: Text('TimePicker In Page', style: textStyle),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return TimePickerInPage();
+                    .push<dynamic>(MaterialPageRoute<dynamic>(builder: (context) {
+                  return const TimePickerInPage();
                 }));
               },
             ),
             RaisedButton(
               color: Colors.blue,
-              child: Text("DateTimePicker Bottom Sheet", style: textStyle),
+              child: Text('DateTimePicker Bottom Sheet', style: textStyle),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return DateTimePickerBottomSheet();
+                    .push<dynamic>(MaterialPageRoute<dynamic>(builder: (context) {
+                  return const DateTimePickerBottomSheet();
                 }));
               },
             ),
             RaisedButton(
               color: Colors.blue,
-              child: Text("DateTimePicker In Page", style: textStyle),
+              child: Text('DateTimePicker In Page', style: textStyle),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return DateTimePickerInPage();
+                    .push<dynamic>(MaterialPageRoute<dynamic>(builder: (context) {
+                  return const DateTimePickerInPage();
                 }));
               },
             ),

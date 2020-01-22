@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_time_date_picker/flutter_time_date_picker.dart';
 
 class DateTimePickerBottomSheet extends StatefulWidget {
-  DateTimePickerBottomSheet({Key key}) : super(key: key);
+  const DateTimePickerBottomSheet({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _DateTimePickerBottomSheetState();
@@ -17,10 +17,10 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
   bool _showTitle = true;
 
   String _format = 'yy年M月d日    EEE,H时:m分';
-  TextEditingController _formatCtrl = TextEditingController();
+  final TextEditingController _formatCtrl = TextEditingController();
 
   DateTimePickerLocale _locale = DateTimePickerLocale.zh_cn;
-  List<DateTimePickerLocale> _locales = DateTimePickerLocale.values;
+  final List<DateTimePickerLocale> _locales = DateTimePickerLocale.values;
 
   DateTime _dateTime;
 
@@ -62,17 +62,17 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> radios = List<Widget>();
+    final List<Widget> radios = <Widget>[];
     _locales.forEach((locale) {
       radios.add(Container(
-        margin: EdgeInsets.only(right: 8.0),
+        margin: const EdgeInsets.only(right: 8.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Radio(
                 value: locale,
                 groupValue: _locale,
-                onChanged: (value) {
+                onChanged: (dynamic value) {
                   setState(() {
                     _locale = value;
                   });
@@ -85,17 +85,17 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
       ));
     });
 
-    TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+    final TextStyle hintTextStyle =
+        Theme.of(context).textTheme.subhead.apply(color: const Color(0xFF999999));
     return Scaffold(
-      appBar: AppBar(title: Text('DateTimePicker Bottom Sheet')),
+      appBar: AppBar(title: const Text('DateTimePicker Bottom Sheet')),
       body: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
             // min datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -110,7 +110,7 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
 
             // max datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -125,7 +125,7 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
 
             // init datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -141,10 +141,10 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
             // show title widget checkbox
             Container(
               height: 30.0,
-              margin: EdgeInsets.only(top: 16.0),
+              margin: const EdgeInsets.only(top: 16.0),
               child: Row(
                 children: <Widget>[
-                  Text('show title actions', style: TextStyle(fontSize: 16.0)),
+                  const Text('show title actions', style: TextStyle(fontSize: 16.0)),
                   Checkbox(
                       value: _showTitle,
                       onChanged: (value) {
@@ -174,7 +174,7 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Locale: '),
+                  const Text('Locale: '),
                   Wrap(direction: Axis.horizontal, children: radios)
                 ],
               ),
@@ -183,14 +183,14 @@ class _DateTimePickerBottomSheetState extends State<DateTimePickerBottomSheet> {
             // selected date time
             Container(
               width: double.infinity,
-              margin: EdgeInsets.only(top: 40.0),
+              margin: const EdgeInsets.only(top: 40.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text('Selected DateTime:',
                       style: Theme.of(context).textTheme.subhead),
                   Container(
-                    padding: EdgeInsets.only(top: 4.0),
+                    padding: const EdgeInsets.only(top: 4.0),
                     child: Text(
                       '${_dateTime.year}-${_dateTime.month.toString().padLeft(2, '0')}-${_dateTime.day.toString().padLeft(2, '0')} ${_dateTime.hour.toString().padLeft(2, '0')}:${_dateTime.minute.toString().padLeft(2, '0')}:${_dateTime.second.toString().padLeft(2, '0')}',
                       style: Theme.of(context).textTheme.title,

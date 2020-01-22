@@ -6,7 +6,7 @@ import 'package:flutter_time_date_picker/flutter_time_date_picker.dart';
 /// @author dylan wu
 /// @since 2019-05-10
 class DatePickerInPage extends StatefulWidget {
-  DatePickerInPage({Key key}) : super(key: key);
+  const DatePickerInPage({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _DatePickerInPageState();
@@ -28,18 +28,18 @@ class _DatePickerInPageState extends State<DatePickerInPage> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle hintTextStyle =
-        Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
+   final TextStyle hintTextStyle =
+        Theme.of(context).textTheme.subhead.apply(color: const Color(0xFF999999));
     return Scaffold(
-      appBar: AppBar(title: Text("DatePicker In Page")),
+      appBar: AppBar(title: const Text('DatePicker In Page')),
       body: Container(
-        decoration: BoxDecoration(color: Colors.white),
-        padding: EdgeInsets.all(16.0),
+        decoration: const BoxDecoration(color: Colors.white),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
             // min datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -54,7 +54,7 @@ class _DatePickerInPageState extends State<DatePickerInPage> {
 
             // max datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -68,7 +68,7 @@ class _DatePickerInPageState extends State<DatePickerInPage> {
 
             // init datetime hint
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -83,7 +83,7 @@ class _DatePickerInPageState extends State<DatePickerInPage> {
 
             // date format
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -98,13 +98,13 @@ class _DatePickerInPageState extends State<DatePickerInPage> {
             // date picker theme
             GestureDetector(
               onTap: () {
-                showDialog(
+                showDialog<dynamic>(
                   context: context,
-                  builder: (_) => new AlertDialog(
-                    titlePadding: EdgeInsets.only(left: 16.0, top: 16.0),
-                    title: new Text("DateTimePickerTheme"),
-                    contentPadding: EdgeInsets.all(16.0),
-                    content: new Text(
+                  builder: (_) =>  AlertDialog(
+                    titlePadding: const EdgeInsets.only(left: 16.0, top: 16.0),
+                    title:  const Text('DateTimePickerTheme'),
+                    contentPadding: const EdgeInsets.all(16.0),
+                    content:  const Text(
                       '''
 DateTimePickerTheme(
         backgroundColor: Color(0xFF80cbc4),
@@ -116,11 +116,11 @@ DateTimePickerTheme(
         itemHeight: 30.0,
 )
                     ''',
-                      style: TextStyle(fontSize: 14.0),
+                      style:  TextStyle(fontSize: 14.0),
                     ),
                     actions: <Widget>[
-                      new FlatButton(
-                        child: new Text("OK"),
+                      FlatButton(
+                        child:  const Text('OK'),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -130,14 +130,14 @@ DateTimePickerTheme(
                 );
               },
               child: Padding(
-                padding: EdgeInsets.only(bottom: 8.0),
+                padding: const EdgeInsets.only(bottom: 8.0),
                 child: Row(
                   children: <Widget>[
                     Container(
                       child:
                           Text('DateTimePickerTheme  ', style: hintTextStyle),
                     ),
-                    Icon(Icons.remove_red_eye, color: Color(0xFF03a9f4)),
+                    Icon(Icons.remove_red_eye, color: const Color(0xFF03a9f4)),
                   ],
                 ),
               ),
@@ -145,15 +145,15 @@ DateTimePickerTheme(
 
             // date picker widget
             Container(
-              margin: EdgeInsets.only(top: 24.0, bottom: 40.0),
+              margin: const EdgeInsets.only(top: 24.0, bottom: 40.0),
               child: DatePickerWidget(
                 minDateTime: DateTime.parse(MIN_DATETIME),
                 maxDateTime: DateTime.parse(MAX_DATETIME),
                 initialDateTime: DateTime.parse(INIT_DATETIME),
                 dateFormat: DATE_FORMAT,
                 pickerTheme: DateTimePickerTheme(
-                  backgroundColor: Color(0xFFb2dfdb),
-                  cancelTextStyle: TextStyle(color: Colors.white),
+                  backgroundColor: const Color(0xFFb2dfdb),
+                  cancelTextStyle: const TextStyle(color: Colors.white),
                   confirmTextStyle: TextStyle(color: Colors.black),
                   itemTextStyle: TextStyle(color: Colors.deepOrange),
                   pickerHeight: 300.0,
@@ -175,7 +175,7 @@ DateTimePickerTheme(
                 Text('Selected Date:',
                     style: Theme.of(context).textTheme.subhead),
                 Container(
-                  padding: EdgeInsets.only(left: 12.0),
+                  padding: const EdgeInsets.only(left: 12.0),
                   child: Text(
                     _dateTime != null
                         ? '${_dateTime.year}-${_dateTime.month.toString().padLeft(2, '0')}-${_dateTime.day.toString().padLeft(2, '0')}'
